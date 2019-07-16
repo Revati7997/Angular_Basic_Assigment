@@ -1,0 +1,17 @@
+.colorele2 {
+  color: blue;
+}
+.tab {
+  float: left;
+}
+li {
+  border: 2px dashed black;
+  border-radius: 20px;
+  list-style-type: none;
+
+  width: 150px;
+
+  padding-left: 20px;
+
+  margin-left: 20px;
+}
