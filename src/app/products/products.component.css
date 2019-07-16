@@ -1,0 +1,13 @@
+h1 {
+  text-align: center;
+  color: black;
+}
+h3 {
+  text-align: center;
+}
+span {
+  padding-left: 10px;
+  padding-right: 10px;
+  color: black;
+  border: 2px solid black;
+}

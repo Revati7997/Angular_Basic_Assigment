@@ -1,0 +1,61 @@
+<h2>We have {{ CalcEmp() }} employees working.</h2>
+<ul>
+  <li *ngFor="let employee of employees" class="tab">
+    <p style="color:maroon">
+      {{ employee.id }}
+    </p>
+    <p class="colorele">
+      {{ employee.name | uppercase }}
+    </p>
+    <p class="colorele2">
+      {{ employee.email }}
+    </p>
+    <p>
+      <span *ngIf="employee.salary > 8; else intern">
+        Senior Developer
+      </span>
+    </p>
+    <ng-template #intern>
+      <p><span>Junior Developer</span></p>
+    </ng-template>
+    <span *ngIf="employee.isOnline == true; else offline">
+      <div>
+        <img
+          width="16"
+          src="https://i.ya-webdesign.com/images/green-sphere-png.png"
+        />
+      </div>
+    </span>
+    <ng-template #offline>
+      <span>
+        <div>
+          <img
+            width="16"
+            src="https://i.ya-webdesign.com/images/red-sphere-png.png"
+          />
+        </div>
+      </span>
+    </ng-template>
+    <span [ngSwitch]="employee.isOnline">
+      Country:
+      <img
+        *ngSwitchCase="false"
+        src="https://lipis.github.io/flag-icon-css/flags/4x3/in.svg"
+        widht="15"
+        height="15"
+      />
+      <img
+        *ngSwitchCase="true"
+        src="https://lipis.github.io/flag-icon-css/flags/4x3/au.svg"
+        widht="15"
+        height="15"
+      />
+      <img
+        *ngSwitchCase=""
+        src="https://lipis.github.io/flag-icon-css/flags/4x3/ie.svg"
+        widht="15"
+        height="15"
+      />
+    </span>
+  </li>
+</ul>
